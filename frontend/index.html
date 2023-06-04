@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" href="/imgs/Logo128x128.png" />
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Textitude</title>
+		<style>
+			@font-face {
+				font-family: Roboto;
+				src: 
+					local('Roboto Regular'), 
+					url('/fonts/Roboto/Roboto-Regular.woff') format('woff'),
+					url('/fonts/Roboto/Roboto-Regular.ttf') format('truetype')
+				;
+			}
+			@font-face {
+				font-family: Roboto;
+				src: 
+					local('Roboto Bold'),
+					url('/fonts/Roboto/Roboto-Bold.woff') format('woff'),
+					url('/fonts/Roboto/Roboto-Bold.ttf') format('truetype')
+				;
+				font-weight: bold;
+			}
+			@font-face {
+				font-family: "Noto Emoji";
+				src: 
+					local('Noto Emoji'),
+					url('/fonts/NotoEmoji/NotoEmoji-Regular.woff') format('woff'),
+					url('/fonts/NotoEmoji/NotoEmoji-Regular.ttf') format('truetype')
+				;
+			}
+			@font-face {
+				font-family: "Noto Emoji";
+				src: 
+					local('Noto Emoji'),
+					url('/fonts/NotoEmoji/NotoEmoji-Bold.woff') format('woff'),
+					url('/fonts/NotoEmoji/NotoEmoji-Bold.ttf') format('truetype')
+				;
+				font-weight: bold;
+			}
+			@font-face {
+				font-family: "Noto Color Emoji";
+				src: 
+					local('Noto Color Emoji'),
+					url('/fonts/NotoColorEmoji/NotoColorEmoji-Regular.woff') format('woff'),
+					url('/fonts/NotoColorEmoji/NotoColorEmoji-Regular.ttf') format('truetype')
+				;
+			}
+			/* html {
+				font-family: "Roboto", "-apple-system", "NotoEmoji", Arial, Helvetica, sans-serif;
+			} */
+		</style>
+	</head>
+	<body>
+		<div id="app" class=""></div>
+		<script type="module" src="/src/main.ts"></script>
+	</body>
+</html>

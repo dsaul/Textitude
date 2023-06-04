@@ -1,0 +1,53 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:22046",
+      "sslPort": 44332
+    }
+  },
+  "profiles": {
+    "ASPNetServer": {
+        "commandName": "Project",
+        "dotnetRunMessages": true,
+        "launchBrowser": true,
+        "launchUrl": "swagger",
+        "applicationUrl": "https://10.1.1.20:7097;http://10.1.1.20:5097",
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development",
+            "MONGO_URI_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\MONGO_URI.txt",
+            "TWILIO_ACCOUNT_SID_FILE": "%USERPROFILE%\\Desktop\\TextitudeTemp\\TWILIO_ACCOUNT_SID.txt",
+            "TWILIO_AUTH_TOKEN_FILE": "%USERPROFILE%\\Desktop\\TextitudeTemp\\TWILIO_AUTH_TOKEN.txt",
+            "VAPID_PRIVATE_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\VAPID_PRIVATE_KEY.txt",
+            "VAPID_PUBLIC_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\VAPID_PUBLIC_KEY.txt",
+            "VAPID_SUBJECT_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\VAPID_SUBJECT.txt",
+            "S3_ACCESS_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\S3_ACCESS_KEY.txt",
+            "S3_SECRET_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\S3_SECRET_KEY.txt",
+            "S3_BUCKET_MMS": "mms",
+            "S3_SERVICE_URI": "http://10.5.5.10:15003",
+            "WEB_PUSH_APPLICATION_SERVER_KEY_FILE": "%USERPROFILE%\\Desktop\\TextitudeTemp\\WEB_PUSH_APPLICATION_SERVER_KEY.txt"
+        }
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development",
+            "MONGO_URI_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\MONGO_URI.txt",
+            "TWILIO_ACCOUNT_SID_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\TWILIO_ACCOUNT_SID.txt",
+            "TWILIO_AUTH_TOKEN_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\TWILIO_AUTH_TOKEN.txt",
+            "VAPID_PRIVATE_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\VAPID_PRIVATE_KEY.txt",
+            "VAPID_PUBLIC_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\VAPID_PUBLIC_KEY.txt",
+            "VAPID_SUBJECT_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\VAPID_SUBJECT.txt",
+            "S3_ACCESS_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\S3_ACCESS_KEY.txt",
+            "S3_SECRET_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\S3_SECRET_KEY.txt",
+            "S3_BUCKET_MMS": "mms",
+            "S3_SERVICE_URI": "http://10.5.5.10:15003",
+            "WEB_PUSH_APPLICATION_SERVER_KEY_FILE": "%USERPROFILE%\\Desktop\\TextitudeTemp\\WEB_PUSH_APPLICATION_SERVER_KEY.txt"
+        }
+    }
+  }
+}

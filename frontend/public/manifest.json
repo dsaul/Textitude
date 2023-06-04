@@ -1,0 +1,31 @@
+{
+	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
+	"name": "Textitude",
+	"short_name": "Textitude",
+	"start_url": ".",
+	"display": "standalone",
+	"background_color": "#9c27b0",
+	"description": "SMS your way.",
+	"icons": [
+		{
+			"src": "/imgs/Logo.svg",
+			"sizes": "any",
+			"type": "image/svg+xml"
+		},
+		{
+			"src": "/imgs/Logo128x128.png",
+			"sizes": "128x128",
+			"type": "image/png"
+		},
+		{
+			"src": "/imgs/Logo64x64.png",
+			"sizes": "64x64",
+			"type": "image/png"
+		},
+		{
+			"src": "/imgs/Logo24x24.png",
+			"sizes": "24x24",
+			"type": "image/png"
+		}
+	]
+}

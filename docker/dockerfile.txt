@@ -1,0 +1,60 @@
+# Stage 1 - frontend
+FROM maskawanian/debian-node-build:bookworm as buildFrontend
+ADD ./frontend /source
+WORKDIR /source
+#RUN ls -lR
+RUN yarn install && yarn build
+
+# Stage 2 - api & web server
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS buildBackend
+
+# Add packages we need.
+RUN apt-get update && apt-get install -y \
+	bash \
+	&& rm -rf /var/lib/apt/lists/*
+RUN mkdir -p /app
+ADD ./backend /source
+WORKDIR /source
+RUN rm /source/ASPNetServer/wwwroot/index.html
+WORKDIR /source/ASPNetServer/wwwroot
+COPY --from=buildFrontend /source/dist .
+
+RUN ls -la
+WORKDIR /source/ASPNetServer
+RUN dotnet restore && dotnet publish --output /app --configuration Debug
+
+WORKDIR /app
+RUN ls -laR
+
+# STAGE 3 - Package
+FROM mcr.microsoft.com/dotnet/aspnet:7.0
+
+# http
+EXPOSE 80/tcp
+
+# Data Protection Keys
+VOLUME /root/.aspnet/DataProtection-Keys
+
+WORKDIR /app
+COPY --from=buildBackend /app .
+#ENTRYPOINT ["dotnet", "ASPNetServer.dll"]
+
+CMD ["dotnet", "ASPNetServer.dll"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

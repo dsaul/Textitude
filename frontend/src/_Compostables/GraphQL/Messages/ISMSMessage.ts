@@ -1,0 +1,46 @@
+import type { IMessageAttachment } from "./MessageAttachment/IMessageAttachment";
+
+export interface ISMSMessage {
+	id?: string | null;
+	twilioToCountry?: string | null;
+	twilioToState?: string | null;
+	twilioSmsMessageSid?: string | null;
+	twilioNumMedia?: string | null;
+	twilioToCity?: string | null;
+	twilioFromZip?: string | null;
+	twilioSmsSid?: string | null;
+	twilioFromState?: string | null;
+	twilioSmsStatus?: string | null;
+	twilioFromCity?: string | null;
+	twilioFromCountry?: string | null;
+	twilioMessagingServiceSid?: string | null;
+	twilioToZip?: string | null;
+	twilioNumSegments?: string | null;
+	twilioReferralNumMedia?: string | null;
+	twilioMessageSid?: string | null;
+	twilioAccountSid?: string | null;
+	twilioURI?: string | null;
+	twilioApiVersion?: string | null;
+	twilioMediaUrl0?: string | null;
+	twilioMediaUrl1?: string | null;
+	twilioMediaUrl2?: string | null;
+	twilioMediaUrl3?: string | null;
+	twilioMediaUrl4?: string | null;
+	twilioMediaUrl5?: string | null;
+	twilioMediaUrl6?: string | null;
+	twilioMediaUrl7?: string | null;
+	twilioMediaUrl8?: string | null;
+	twilioMediaUrl9?: string | null;
+	iso8601Timestamp?: string | null;
+	price?: string | null;
+	from?: string | null;
+	errorMessage?: string | null;
+	isAIDetectedSpam?: boolean | null;
+	isHumanConfirmedSpam?: boolean | null;
+	backendService?: string | null;
+	body?: string | null;
+	to?: string | null;
+	isRead?: boolean | null;
+	attachments: IMessageAttachment[];
+	isSpam?: boolean | null;
+}

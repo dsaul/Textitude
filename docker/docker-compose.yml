@@ -1,0 +1,65 @@
+version: '2.0'
+services:
+  textitude:
+    build:
+      context: ../
+      dockerfile: ./docker/dockerfile.txt
+    container_name: textitude
+    image: maskawanian/textitude:latest
+    restart: always
+    depends_on:
+     - textitude-mongo
+    volumes:
+      - ./secrets:/var/run/secrets
+    ports:
+     - '6612:6612'
+    environment:
+     - MONGO_URI_PATH=/secrets/MONGO_URI_PATH.txt
+     - TWILIO_ACCOUNT_SID_FILE=/secrets/TWILIO_ACCOUNT_SID.txt
+     - TWILIO_AUTH_TOKEN_FILE=/secrets/TWILIO_AUTH_TOKEN.txt
+     - VAPID_PRIVATE_KEY_PATH=/secrets/VAPID_PRIVATE_KEY.txt
+     - VAPID_PUBLIC_KEY_PATH=/secrets/VAPID_PUBLIC_KEY.txt
+     - VAPID_SUBJECT_PATH=/secrets/VAPID_SUBJECT.txt
+     - S3_ACCESS_KEY_FILE=/secrets/S3_ACCESS_KEY.txt
+     - S3_SECRET_KEY_FILE=/secrets/S3_SECRET_KEY.txt
+     - S3_BUCKET_MMS=mms
+     - S3_SERVICE_URI_FILE=/secrets/S3_SERVICE_URI.txt
+     - NODE_ENV=development
+     - VITE_NODE_ENV=development
+     - VITE_SEND_FROM_E164=
+     - VITE_ATTACHMENT_URI_PREFIX=
+     - WEB_PUSH_APPLICATION_SERVER_KEY_FILE=/var/run/secrets/WEB_PUSH_APPLICATION_SERVER_KEY.txt
+    networks:
+     - textitude
+  textitude-mongo:
+    image: mongo:4
+    container_name: textitude-mongo
+    volumes:
+     - ./data-mongo:/data/db
+    ports:
+     - '27017:27017'
+    environment:
+     - MONGO_INITDB_ROOT_USERNAME=
+     - MONGO_INITDB_ROOT_PASSWORD=
+    restart: always
+    networks:
+      - textitude
+  textitude-minio:
+    image: minio/minio
+    container_name: textitude-minio
+    ports:
+     - "15003:15003" # access
+     - "15004:15004" # console
+    volumes:
+     - ./data-minio:/data
+     - ./secrets:/var/run/secrets
+    environment:
+     - TZ=America/Winnipeg
+     # https://min.io/docs/minio/linux/reference/minio-server/minio-server.html#configuration-settings
+     - MINIO_CONFIG_ENV_FILE=/var/run/secrets/MINIO_CONFIG_ENV_FILE.txt
+    command: server --address ":15003" --console-address ":15004" /data
+    networks:
+      - textitude
+networks:
+  textitude:
+    name: textitude

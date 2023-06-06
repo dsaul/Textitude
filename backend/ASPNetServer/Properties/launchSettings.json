@@ -23,10 +23,10 @@
             "VAPID_PRIVATE_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\VAPID_PRIVATE_KEY.txt",
             "VAPID_PUBLIC_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\VAPID_PUBLIC_KEY.txt",
             "VAPID_SUBJECT_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\VAPID_SUBJECT.txt",
-            "S3_ACCESS_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\S3_ACCESS_KEY.txt",
-            "S3_SECRET_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\S3_SECRET_KEY.txt",
+            "S3_ACCESS_KEY_FILE": "%USERPROFILE%\\Desktop\\TextitudeTemp\\S3_ACCESS_KEY.txt",
+            "S3_SECRET_KEY_FILE": "%USERPROFILE%\\Desktop\\TextitudeTemp\\S3_SECRET_KEY.txt",
             "S3_BUCKET_MMS": "mms",
-            "S3_SERVICE_URI": "http://10.5.5.10:15003",
+            "S3_SERVICE_URI_FILE": "%USERPROFILE%\\Desktop\\TextitudeTemp\\S3_SERVICE_URI.txt",
             "WEB_PUSH_APPLICATION_SERVER_KEY_FILE": "%USERPROFILE%\\Desktop\\TextitudeTemp\\WEB_PUSH_APPLICATION_SERVER_KEY.txt"
         }
     },
@@ -42,10 +42,10 @@
             "VAPID_PRIVATE_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\VAPID_PRIVATE_KEY.txt",
             "VAPID_PUBLIC_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\VAPID_PUBLIC_KEY.txt",
             "VAPID_SUBJECT_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\VAPID_SUBJECT.txt",
-            "S3_ACCESS_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\S3_ACCESS_KEY.txt",
-            "S3_SECRET_KEY_PATH": "%USERPROFILE%\\Desktop\\TextitudeTemp\\S3_SECRET_KEY.txt",
+            "S3_ACCESS_KEY_FILE": "%USERPROFILE%\\Desktop\\TextitudeTemp\\S3_ACCESS_KEY.txt",
+            "S3_SECRET_KEY_FILE": "%USERPROFILE%\\Desktop\\TextitudeTemp\\S3_SECRET_KEY.txt",
             "S3_BUCKET_MMS": "mms",
-            "S3_SERVICE_URI": "http://10.5.5.10:15003",
+            "S3_SERVICE_URI_FILE": "%USERPROFILE%\\Desktop\\TextitudeTemp\\S3_SERVICE_URI.txt",
             "WEB_PUSH_APPLICATION_SERVER_KEY_FILE": "%USERPROFILE%\\Desktop\\TextitudeTemp\\WEB_PUSH_APPLICATION_SERVER_KEY.txt"
         }
     }

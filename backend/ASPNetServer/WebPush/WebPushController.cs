@@ -69,7 +69,7 @@ namespace ASPNetServer.WebPush
 			
 		}
 
-		public async Task NotifyNewMessage(string payload)
+		public async Task NotifyNewMessage(MessageDocument payload)
 		{
 			var results = from sub in WebPushSubscriptions.AsQueryable()
 						  select sub;
@@ -82,7 +82,8 @@ namespace ASPNetServer.WebPush
 				{
 					try
 					{
-						await WebPushClient.SendNotificationAsync(wpcSubscription, payload, VAPIDDetails);
+						WebPushMessagePayload wpp = WebPushMessagePayload.ForMessage(payload);
+						await WebPushClient.SendNotificationAsync(wpcSubscription, wpp.Serialize(), VAPIDDetails);
 					}
 					catch (WebPushException ex)
 					{

@@ -15,6 +15,7 @@ using System.Text.RegularExpressions;
 using SixLabors.ImageSharp;
 using DanSaul.SharedCode.StandardizedEnvironmentVariables;
 using ASPNetServer.Mongo;
+using ASPNetServer.WebPush;
 
 namespace Textitude.Webhook
 {
@@ -26,18 +27,21 @@ namespace Textitude.Webhook
 		IMongoCollection<MessageDocument> Messages { get; set; }
 		SpamFilterController SpamFilterController { get; set; }
 		AmazonS3Client S3Client { get; init; }
+		WebPushController WebPushController { get; init; }
 
 		public TwilioController(
 			SpamFilterController _SpamFilterController,
 			IMongoCollection<MessageDocument> _Messages,
 			System.Net.Http.HttpClient _HttpClient,
-			AmazonS3Client _S3Client
+			AmazonS3Client _S3Client,
+			WebPushController _WebPushController
 			)
 		{
 			HttpClient = _HttpClient;
 			Messages = _Messages;
 			SpamFilterController = _SpamFilterController;
 			S3Client = _S3Client;
+			WebPushController = _WebPushController;
 		}
 
 		static void GetSize(TemporaryFile file, out int? imageWidthPx, out int? imageHeightPx)
@@ -420,7 +424,10 @@ namespace Textitude.Webhook
 
 
 			Messages.InsertOne(message);
-			
+
+
+			await WebPushController.NotifyNewMessage(message);
+
 
 			var response2 = new MessagingResponse();
 			//response2.Message("Hello from a .NET Minimal API!");
